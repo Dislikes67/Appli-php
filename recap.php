@@ -11,6 +11,32 @@
         <title>Récapitulatif des produits</title>
 </head>
 <body>
-    <?php var_dump($_SESSION); ?>
+    <?php
+        if (!isset($_SESSION['products']) || empty($_SESSION['products'])){
+            echo "<p>Aucun produit en session...</p>";
+        }
+        else {
+            echo "<table>",
+                    "<thead>",
+                        "<tr>",
+                            "<th>#</th>",
+                            "<th>Nom</th>",
+                            "<th>Prix</th>",
+                            "<th>Quantité</th>",
+                            "<th>Total</th>",
+                        "</tr>",
+                    "</thead>",
+                    "<tbody>";
+            foreach ($_SESSION['products'] as $index => $product) {
+                echo "<tr>",
+                        "<td>".$index."</td>",
+                        "<td>".$product['name']."</td>",
+                        "<td>".$product['price']."</td>",
+                        "<td>".$product['qtt']."</td>",
+                        "<td>".$product['total']."</td>",
+                     "</tr>";
+            }
+        }
+    <?
 </body>
 </html> 
