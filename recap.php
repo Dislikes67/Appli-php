@@ -2,7 +2,7 @@
     session_start();
 ?>
 <!DOCTYPE html>
-<html lang="en">
+<html lang="fr">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -10,6 +10,7 @@
 </head>
 <body>
     <?php
+        // checks if the products array exists in the session and is not empty.
         if (!isset($_SESSION['products']) || empty($_SESSION['products'])){
             echo "<p>Aucun produit en session...</p>";
         } else {
@@ -27,7 +28,7 @@
             $totalGeneral = 0;
             foreach ($_SESSION['products'] as $index => $product) {
                 echo "<tr>",
-                        "<td>".($index + 1)."</td>",
+                        "<td>".($index + 1)."</td>", // Incrementing index to start from 1
                         "<td>".$product['name']."</td>",
                         "<td>".number_format($product['price'], 2, ",", "&nbsp;")."&nbsp;€</td>",
                         "<td>".$product['qtt']."</td>",
