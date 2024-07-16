@@ -9,7 +9,7 @@
     
     <h1>Ajouter un produit</h1>
     <!-- The form has an action attribute pointing to traitement.php, meaning the form data will be sent to traitement.php for processing when submitted. -->
-    <form action="traitement.php" method="post"> <!--the form data will be sent using the HTTP POST method.-->
+    <form action="traitement.php" method="post"> <!--Le formulaire est envoyé en utilisant la requête HTML POST qui ne le stocke pas dans l'url à l'inverse de la méthode GET -->
         <p>
                 <label>
                     Nom du produit :
