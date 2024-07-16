@@ -6,6 +6,7 @@ session_start();
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" />
     <title>Récapitulatif des produits</title>
 </head>
 <body>
@@ -14,7 +15,7 @@ session_start();
         if (!isset($_SESSION['products']) || empty($_SESSION['products'])){
             echo "<p>Aucun produit en session...</p>";
         } else {
-            echo "<table>",
+            echo "<table class='table table-bordered table-striped'>",
                     "<thead>",
                         "<tr>",
                             "<th>#</th>",
@@ -44,5 +45,6 @@ session_start();
             "</table>";
         }
     ?>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
