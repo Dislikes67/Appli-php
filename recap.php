@@ -1,5 +1,4 @@
 <?php
-
     session_start();
 ?>
 <!DOCTYPE html>
@@ -7,15 +6,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    
-        <title>Récapitulatif des produits</title>
+    <title>Récapitulatif des produits</title>
 </head>
 <body>
     <?php
         if (!isset($_SESSION['products']) || empty($_SESSION['products'])){
             echo "<p>Aucun produit en session...</p>";
-        }
-        else {
+        } else {
             echo "<table>",
                     "<thead>",
                         "<tr>",
@@ -27,16 +24,24 @@
                         "</tr>",
                     "</thead>",
                     "<tbody>";
+            $totalGeneral = 0;
             foreach ($_SESSION['products'] as $index => $product) {
                 echo "<tr>",
-                        "<td>".$index."</td>",
+                        "<td>".($index + 1)."</td>",
                         "<td>".$product['name']."</td>",
-                        "<td>".$product['price']."</td>",
+                        "<td>".number_format($product['price'], 2, ",", "&nbsp;")."&nbsp;€</td>",
                         "<td>".$product['qtt']."</td>",
-                        "<td>".$product['total']."</td>",
+                        "<td>".number_format($product['price'] * $product['qtt'], 2, ",", "&nbsp;")."&nbsp;€</td>",
                      "</tr>";
+                $totalGeneral += $product['price'] * $product['qtt'];
             }
+            echo "<tr>",
+                    "<td colspan='4'>Total général : </td>",
+                    "<td><strong>".number_format($totalGeneral, 2, ",", "&nbsp;")."&nbsp;€</strong></td>",
+                    "</tr>",
+                "</tbody>",
+            "</table>";
         }
-    <?
+    ?>
 </body>
-</html> 
+</html>
