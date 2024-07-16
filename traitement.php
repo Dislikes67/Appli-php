@@ -25,6 +25,16 @@ session_start();        //Session_start démarre la session et enregistre les in
             $_SESSION['products'][] = $product;
         }
     }
+    if(isset($_GET['action'])){
+
+        switch ($_GET['action']){
+            case "add":
+            case "delete":
+            case "clear":
+            case "up-qtt":
+            case "down-qtt":
+        }
+    }
     
 // Redirect back to the index page
 header("Location:index.php");
