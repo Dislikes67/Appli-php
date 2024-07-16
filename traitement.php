@@ -1,6 +1,6 @@
-<?php 
-    session_start();
-
+<?php
+session_start();
+    // var_dump ($_SESSION);die; 
     if (isset($_POST['submit'])){
 
 
@@ -23,7 +23,9 @@
             $_SESSION['products'][] = $product;
         }
     }
+    
 // Redirect back to the index page
 header("Location:index.php");
 exit(); // Ensure no further code is executed after the redirect
+
 
