@@ -1,6 +1,6 @@
 <?php
 session_start();        //Session_start démarre la session et enregistre les informations coté serveur jusqu'à la fermeture ou l'arrêt de la session
-    // var_dump ($_SESSION);die; 
+    
     if (isset($_POST['submit'])){
 
 
