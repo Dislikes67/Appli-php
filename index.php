@@ -24,7 +24,7 @@
         <p>
             <label>
                 Quantité désirée :
-                <input type="number" name="qtt" value="1">
+                <input type="number" name="qtt" value="1" min=1 required>
             </label>
         </p>
         <p>

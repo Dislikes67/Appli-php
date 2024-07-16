@@ -17,10 +17,12 @@
                 "qtt" => $qtt,
                 "total" => $price*$qtt
             ];
+            
+            // Add product to the session array
             $_SESSION['products'][] = $product;
         }
     }
-
-    header("Location:index.php");
-
+// Redirect back to the index page
+header("Location:index.php");
+exit(); // Ensure no further code is executed after the redirect
 
