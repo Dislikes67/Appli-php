@@ -23,6 +23,7 @@ session_start();
                             "<th>Prix</th>",
                             "<th>Quantité</th>",
                             "<th>Total</th>",
+                            "<th>Actions</th>",
                         "</tr>",
                     "</thead>",
                     "<tbody>";
@@ -34,6 +35,9 @@ session_start();
                         "<td>".number_format($product['price'], 2, ",", "&nbsp;")."&nbsp;€</td>",
                         "<td>".$product['qtt']."</td>",
                         "<td>".number_format($product['price'] * $product['qtt'], 2, ",", "&nbsp;")."&nbsp;€</td>",
+                        "<td>",
+                            "<a href='traitement.php?action=delete&index=".$index."' class='btn btn-danger btn-sm'>Supprimer</a>",
+                        "</td>",
                      "</tr>";
                 $totalGeneral += $product['price'] * $product['qtt'];
             }
