@@ -29,11 +29,12 @@ session_start();        //Session_start démarre la session et enregistre les in
     if(isset($_GET['action'])){
 
         switch ($_GET['action']){
-            case "add":
+            // case "add":
             case "delete":
+                
                 if (isset($_GET['index'])) {
-                    // Supprime le produit à l'index spécifié
-                    $index = inval($_GET['index']);
+                    //Supprime le produit à l'index spécifié
+                    $index = intval($_GET['index']);
                     if(isset($_SESSION['product'][$index])){
                         unset($_SESSION['product'][$index]);
                         // Réindexe le tableau pour éviter les trous
@@ -41,15 +42,15 @@ session_start();        //Session_start démarre la session et enregistre les in
                     }
                 }
                 break;
-            case "clear":
-                // Vide le tableau de produits dans la session
-            case "up-qtt":
-            case "down-qtt":
+                // case "clear":
+                    // Vide le tableau de produits dans la session
+                // case "up-qtt":
+                // case "down-qtt":
         }
     }
     
 // Redirect back to the index page
-header("Location:index.php");
+header("Location:recap.php");
 exit(); // Ensure no further code is executed after the redirect
 
 
