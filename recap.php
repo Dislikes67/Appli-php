@@ -49,6 +49,8 @@ session_start();
             "</table>";
         }
         print_r($_SESSION['products']);
+        echo "Action: " . $_GET['action'];
+        echo "Index: " . $_GET['index'];
     ?>
 <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
