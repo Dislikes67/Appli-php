@@ -10,8 +10,10 @@ session_start();
     <title>Récapitulatif des produits</title>
 </head>
 <body>
-    <?php
-        // checks if the products array exists in the session and is not empty.
+    <div class="container">
+        <h1>Récapitulatif des produits</h1>
+        <?php
+        // Check if the products array exists in the session and is not empty
         if (!isset($_SESSION['products']) || empty($_SESSION['products'])){
             echo "<p>Aucun produit en session...</p>";
         } else {
@@ -36,7 +38,7 @@ session_start();
                         "<td>".$product['qtt']."</td>",
                         "<td>".number_format($product['price'] * $product['qtt'], 2, ",", "&nbsp;")."&nbsp;€</td>",
                         "<td>",
-                            <a href='traitement.php?action=delete&index=<?php echo $index; ?>' class='btn btn-danger btn-sm'>Supprimer</a>
+                            "<a href='traitement.php?action=delete&index=".$index."' class='btn btn-danger btn-sm'>Supprimer</a>",
                         "</td>",
                      "</tr>";
                 $totalGeneral += $product['price'] * $product['qtt'];
@@ -44,14 +46,13 @@ session_start();
             echo "<tr>",
                     "<td colspan='4'>Total général : </td>",
                     "<td><strong>".number_format($totalGeneral, 2, ",", "&nbsp;")."&nbsp;€</strong></td>",
+                    "<td></td>",
                     "</tr>",
                 "</tbody>",
             "</table>";
         }
-        print_r($_SESSION['products']);
-        echo "Action: " . $_GET['action'];
-        echo "Index: " . $_GET['index'];
-    ?>
-<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+        ?>
+    </div>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>
