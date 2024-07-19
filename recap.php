@@ -38,8 +38,8 @@ session_start();
                         "<td>".$product['qtt']."</td>",
                         "<td>".number_format($product['price'] * $product['qtt'], 2, ",", "&nbsp;")."&nbsp;€</td>",
                         "<td>",
-                            "<a href='traitement.php?action=up-qtt&index=".$index."' class='btn btn-success btn-sm'>+</a> ",
-                            "<a href='traitement.php?action=down-qtt&index=".$index."' class='btn btn-warning btn-sm'>-</a> ",
+                            "<a href='traitement.php?action=up-qtt&index=".$index."' class='btn btn-secondary btn-sm'>+</a> ",
+                            "<a href='traitement.php?action=down-qtt&index=".$index."' class='btn btn-secondary btn-sm'>-</a> ",
                             "<a href='traitement.php?action=delete&index=".$index."' class='btn btn-danger btn-sm'>Supprimer</a>",
                         "</td>",
                      "</tr>";
