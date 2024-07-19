@@ -39,7 +39,11 @@ session_start();        //Session_start démarre la session et enregistre les in
                         unset($_SESSION['product'][$index]);
                         // Réindexe le tableau pour éviter les trous
                         $_SESSION['products'] = array_values($_SESSION['products']);
+                    } else {
+                        echo "Index is not found in session products array.";
                     }
+                } else {
+                    echo "Index is not set in URL.";
                 }
                 break;
                 // case "clear":
