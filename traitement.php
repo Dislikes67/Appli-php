@@ -26,11 +26,7 @@ if (isset($_POST['submit'])) {
 // Check if an action is specified in the URL
 if (isset($_GET['action'])) {
 
-    switch ($_GET['action']) {
-        case "add":
-            // Code for adding (already handled above, but could be expanded here)
-            break;
-            
+    switch ($_GET['action']) { 
         case "delete":
             // Ensure index is set and is valid
             if (isset($_GET['index'])) {

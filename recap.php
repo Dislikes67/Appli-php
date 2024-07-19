@@ -11,11 +11,11 @@ session_start();
 </head>
 <body>
     <div class="container">
-        <h1>Récapitulatif des produits</h1>
+        <h1>Panier</h1>
         <?php
         // Check if the products array exists in the session and is not empty
         if (!isset($_SESSION['products']) || empty($_SESSION['products'])){
-            echo "<p>Aucun produit en session...</p>";
+            echo "<p>Aucun produit dans le panier...</p>";
         } else {
             echo "<table class='table table-bordered table-striped'>",
                     "<thead>",
