@@ -29,27 +29,44 @@ session_start();        //Session_start démarre la session et enregistre les in
     if(isset($_GET['action'])){
 
         switch ($_GET['action']){
-            // case "add":
             case "delete":
                 
                 if (isset($_GET['index'])) {
                     //Supprime le produit à l'index spécifié
                     $index = intval($_GET['index']);
-                    if(isset($_SESSION['product'][$index])){
+                    if (isset($_SESSION['product'][$index])){
                         unset($_SESSION['product'][$index]);
                         // Réindexe le tableau pour éviter les trous
                         $_SESSION['products'] = array_values($_SESSION['products']);
-                    } else {
-                        echo "Index is not found in session products array.";
                     }
-                } else {
-                    echo "Index is not set in URL.";
                 }
                 break;
-                // case "clear":
-                    // Vide le tableau de produits dans la session
-                // case "up-qtt":
-                // case "down-qtt":
+                case "clear":
+                    // Clear all products
+                    $_SESSION['products'] = [];
+                    break;
+                    
+                    case "up-qtt":
+                        if (isset($_GET['index'])) {
+                            $index = intval($_GET['index']);
+                            if (isset($_SESSION['products'][$index])) {
+                                $_SESSION['products'][$index]['qtt']++;
+                                // Update total price
+                                $_SESSION['products'][$index]['total'] = $_SESSION['products'][$index]['price'] * $_SESSION['products'][$index]['qtt'];
+                            }
+                        }
+                        break;
+
+                    case "down-qtt":
+                        if (isset($_GET['index'])) {
+                            $index = intval($_GET['index']);
+                            if (isset($_SESSION['products'][$index]) && $_SESSION['products'][$index]['qtt'] > 1) {
+                                $_SESSION['products'][$index]['qtt']--;
+                                // Update total price
+                                $_SESSION['products'][$index]['total'] = $_SESSION['products'][$index]['price'] * $_SESSION['products'][$index]['qtt'];
+                            }
+                        }
+                        break;
         }
     }
     

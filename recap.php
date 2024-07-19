@@ -36,7 +36,7 @@ session_start();
                         "<td>".$product['qtt']."</td>",
                         "<td>".number_format($product['price'] * $product['qtt'], 2, ",", "&nbsp;")."&nbsp;€</td>",
                         "<td>",
-                            "<a href='traitement.php?action=delete&index=".$index."' class='btn btn-danger btn-sm'>Supprimer</a>",
+                            <a href='traitement.php?action=delete&index=<?php echo $index; ?>' class='btn btn-danger btn-sm'>Supprimer</a>
                         "</td>",
                      "</tr>";
                 $totalGeneral += $product['price'] * $product['qtt'];
