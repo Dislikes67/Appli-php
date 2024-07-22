@@ -32,6 +32,7 @@ if (isset($_SESSION['products'])) {
                     <li class="nav-item">
                         <a class="nav-link" href="recap.php">Panier</a>
                     </li>
+                    <?php if ($totalQuantity > 0) { echo "($totalQuantity . )"; } ?></a>
                 </ul>
             </div>
         </div>
