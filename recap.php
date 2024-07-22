@@ -10,6 +10,9 @@ session_start();
     <title>Récapitulatif des produits</title>
 </head>
 <body>
+
+    <?php include 'navbar.php'; ?>
+
     <div class="container">
         <h1>Panier</h1>
         <?php
