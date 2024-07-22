@@ -1,5 +1,5 @@
 <?php
-
+session_start();
 // Calculate total quantity of items in the cart
 $totalQuantity = 0;
 if (isset($_SESSION['products'])) {
@@ -32,7 +32,7 @@ if (isset($_SESSION['products'])) {
                     <li class="nav-item">
                         <a class="nav-link" href="recap.php">Panier</a>
                     </li>
-                    <?php if ($totalQuantity > 0) { echo "($totalQuantity . )"; } ?></a>
+                    <?php if ($totalQuantity > 0) { echo "($totalQuantity)"; } ?></a>
                 </ul>
             </div>
         </div>
