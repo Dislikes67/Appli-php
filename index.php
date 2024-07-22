@@ -22,7 +22,7 @@
             <p>
                 <label>
                     Prix du produit :
-                    <input type="number" step="any" name="price">
+                    <input type="number" step="any" name="price" value="1" min=1 required>
                 </label>
             </p>
             <p>
