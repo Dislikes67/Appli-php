@@ -13,6 +13,12 @@ session_start();
     <div class="container">
         <h1>Panier</h1>
         <?php
+        // Display notification message if it exists
+        if (isset($_SESSION['message'])) {
+            echo "<div class='alert alert-success'>".$_SESSION['message']."</div>";
+            unset($_SESSION['message']); // Remove message after displaying it
+        }
+
         // Check if the products array exists in the session and is not empty
         if (!isset($_SESSION['products']) || empty($_SESSION['products'])){
             echo "<p>Aucun produit dans le panier...</p>";
@@ -52,6 +58,9 @@ session_start();
                     "</tr>",
                 "</tbody>",
             "</table>";
+
+            // Add a "Clear All" button
+            echo "<a href='traitement.php?action=clear' class='btn btn-outline-danger'>Vider le panier</a>";
         }
         ?>
     </div>

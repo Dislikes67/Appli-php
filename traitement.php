@@ -48,6 +48,7 @@ if (isset($_GET['action'])) {
         case "clear":
             // Clear all products
             $_SESSION['products'] = [];
+            $_SESSION['message'] = "Tous les produits ont été supprimés.";
             break;
 
         case "up-qtt":
