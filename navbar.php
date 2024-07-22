@@ -1,3 +1,14 @@
+<?php
+
+// Calculate total quantity of items in the cart
+$totalQuantity = 0;
+if (isset($_SESSION['products'])) {
+    foreach ($_SESSION['products'] as $product) {
+        $totalQuantity += $product['qtt'];
+    }
+}
+?>
+
 <!DOCTYPE html>
 <html lang="fr">
 <head>
