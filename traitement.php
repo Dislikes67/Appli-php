@@ -34,13 +34,8 @@ if (isset($_GET['action'])) {
                     unset($_SESSION['products'][$index]);
                     // Re-index the array to avoid gaps
                     $_SESSION['products'] = array_values($_SESSION['products']);
-                } else {
-                    // Debug information
-                    echo "Index not found in session products array.";
+                    $_SESSION['message'] = "Produit supprimé avec succès.";
                 }
-            } else {
-                // Debug information
-                echo "Index not set in URL.";
             }
             break;
 
